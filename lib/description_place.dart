@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'rating.dart';
 import 'button_purple.dart';
 
-class Description_place extends StatelessWidget{
+class DescriptionPlace extends StatelessWidget{
 
   String namePlace;
   double stars;
   String descriptionPlace;
 
-  Description_place(this.namePlace, this.stars, this.descriptionPlace);
+  DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
 
   @override
   Widget build(BuildContext context) {

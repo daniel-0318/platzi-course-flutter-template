@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'description_place.dart';
 import 'review_list.dart';
 import 'header_appbar.dart';
@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
-
   String description_place = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -34,20 +32,20 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Stack(
-          children: <Widget>[
-            ListView(
-              children: <Widget>[
-                Description_place("Bahamas", 5, description_place),
-                ReviewList()
-              ],
-            ),
-            HeaderAppBar()
-          ],
-          
-        )
-      )
+        home: Scaffold(
+          body: Stack(
+            children: <Widget>[
+              ListView(
+                children: <Widget>[
+                  DescriptionPlace("Bahamas", 4, description_place),
+                  ReviewList()
+
+                ],
+              ),
+              HeaderAppBar()
+            ],
+          ),
+        )//MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
