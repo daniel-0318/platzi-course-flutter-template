@@ -13,7 +13,7 @@ class HomeTrips extends StatelessWidget{
       children: <Widget>[
         ListView(
           children: <Widget>[
-            Description_place("Bahamas", 5, description_place),
+            DescriptionPlace("Bahamas", 5, description_place),
             ReviewList()
           ],
         ),
