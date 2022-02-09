@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'description_place.dart';
+import 'review_list.dart';
+import 'header_appbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -29,10 +35,18 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hola mundo"),
-        ),
-        body: new Description_place("Bahamas", 4, description_place),
+        body: Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                Description_place("Bahamas", 5, description_place),
+                ReviewList()
+              ],
+            ),
+            HeaderAppBar()
+          ],
+          
+        )
       )
     );
   }

@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'rating.dart';
+import 'button_purple.dart';
 
 class Description_place extends StatelessWidget{
 
   String namePlace;
-  int stars;
+  double stars;
   String descriptionPlace;
 
   Description_place(this.namePlace, this.stars, this.descriptionPlace);
@@ -12,41 +14,6 @@ class Description_place extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final star_half = Container(
-      margin: EdgeInsets.only(
-          top: 323.0,
-          right: 3.0
-      ),
-
-      child: Icon(
-        Icons.star_half,
-        color: Color(0xFFf2C611),
-      ),
-    );
-
-    final star_border= Container(
-      margin: EdgeInsets.only(
-          top: 323.0,
-          right: 3.0
-      ),
-
-      child: Icon(
-        Icons.star_border,
-        color: Color(0xFFf2C611),
-      ),
-    );
-
-    final star = Container(
-      margin: EdgeInsets.only(
-        top: 323.0,
-        right: 3.0
-      ),
-
-      child: Icon(
-        Icons.star,
-        color: Color(0xFFf2C611),
-      ),
-    );
 
     final title_stars = Row(
       children: <Widget>[
@@ -66,15 +33,7 @@ class Description_place extends StatelessWidget{
             textAlign: TextAlign.left,
           ),
         ),
-        Row(
-          children: <Widget>[
-            star,
-            star,
-            star,
-            star_half,
-            star_border
-          ],
-        )
+        Rating(stars, 20.0, 30.0,320)
       ],
     );
     
@@ -96,9 +55,11 @@ class Description_place extends StatelessWidget{
     );
 
     final content = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children:<Widget> [
         title_stars,
-        description
+        description,
+        ButtonPurple("Navigate")
       ],
     );
 
